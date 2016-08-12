@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/micahp0506/fantasy_assistant/issues"
   },
-  "homepage": "https://github.com/micahp0506/fantasy_assistant#readme"
+  "homepage": "https://github.com/micahp0506/fantasy_assistant#readme",
+  "dependencies": {
+    "npm-http-server": "^3.4.0"
+  }
 }
