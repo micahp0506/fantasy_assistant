@@ -1,0 +1,19 @@
+{
+  "name": "fantasy_assistant",
+  "version": "1.0.0",
+  "description": "Fantasy Assistant is designed to help the user with the drafting of players for fantasy sports.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micahp0506/fantasy_assistant.git"
+  },
+  "author": "Micah Wells <micahp0506@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micahp0506/fantasy_assistant/issues"
+  },
+  "homepage": "https://github.com/micahp0506/fantasy_assistant#readme"
+}
