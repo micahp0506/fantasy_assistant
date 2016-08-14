@@ -4,6 +4,9 @@
   <title>Fantasy Assistant</title>
     <link rel="stylesheet" type="text/css" href="app.css">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div ng-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -11,15 +14,11 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
     <script src="app.module.js"></script>
     <script src="app.js"></script>
     <script src="header/header.js"></script>
     <script src="header/header.component.js"></script>
-    <!-- <script src="header/header.service.js"></script> -->
-  </head>
-  <body>
-    <div ng-view></div>
-    <header></header>
   </body>
 </html>
 
