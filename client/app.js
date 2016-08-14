@@ -1,15 +1,15 @@
 'use strict';
 
-const app = angular.module('FantasyAssistantApp', ['ngRoute']);
+angular.
+module('fantasyAssistantApp', ['ngRoute']).
+config(['$locationProvider', '$routeProvider',
+    function ($locationProvider, $routeProvider) {
+        $locationProvider.hashPrefix('!');
 
-app.config(['$routeProvider',
-    function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'HomeCtrl',
-                templateUrl: 'partials/home.html'
+                template: '<header></header>'
             })
-            .otherwise({
-                redirectTo: '/'
-            });
-    }]);
+            .otherwise('/');
+    }
+]);
