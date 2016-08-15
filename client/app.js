@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-module('fantasyAssistantApp', ['ngRoute']).
+module('fantasyAssistantApp').
 config(['$locationProvider', '$routeProvider',
     function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
