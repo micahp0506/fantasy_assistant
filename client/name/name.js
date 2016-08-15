@@ -1,4 +1,4 @@
 'use strict';
 
-// Define the `header` module
+// Define the `name` module
 angular.module('name', []);
