@@ -8,7 +8,7 @@ config(['$locationProvider', '$routeProvider',
 
         $routeProvider
             .when('/', {
-                template: '<header></header>'
+                template: '<name></name>'
             })
             .otherwise('/');
     }
