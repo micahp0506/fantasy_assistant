@@ -5,9 +5,15 @@ angular.
   module('name').
   component('name', {
     templateUrl: 'name/name.html',
+    bindings: {
+        name: '<'
+    },
     controller: [
       function NameController() {
-        console.log("this", this);
+
+        this.setName = function () {
+            let name = this.name;
+        }
       }
     ]
   });
