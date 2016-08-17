@@ -13,6 +13,9 @@ config(['$locationProvider', '$routeProvider',
             .when('/name', {
                 template: '<name></name>'
             })
+            .when('/team', {
+                template: '<team name="ctrl.name"></team>'
+            })
             .otherwise('/');
     }
 ]);

@@ -5,14 +5,14 @@ angular.
   module('name').
   component('name', {
     templateUrl: 'name/name.html',
-    bindings: {
-        name: '<'
-    },
     controller: [
       function NameController() {
 
         this.setName = function () {
-            let name = this.name;
+          this.name = {
+            teamName: this.teamName
+          }
+          console.log("this.teamName", this);
         }
       }
     ]
