@@ -8,6 +8,9 @@ config(['$locationProvider', '$routeProvider',
 
         $routeProvider
             .when('/', {
+                template: '<auth></auth>'
+            })
+            .when('/header', {
                 template: '<header></header>'
             })
             .when('/name', {

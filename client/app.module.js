@@ -4,6 +4,7 @@
 angular.module('fantasyAssistantApp', [
     'ngRoute',
     'header',
+    'auth',
     'name',
     'team'
 ]);
