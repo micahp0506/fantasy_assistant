@@ -1,2 +1,39 @@
-<span>Name: {{$ctrl.name}}</span>
-
+<div class="row">
+    <div class="col-md-5">
+    </div>
+    <div class="col-md-2">
+        <span id="teamName">Name: {{$ctrl.name}}</span>
+    </div>
+    <div class="col-md-5">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="form-group col-md-2">
+        <input class="form-control" id="playerName" ng-model="$ctrl.playerName" placeholder="Enter Player Name">
+    </div>
+    <div class="form-group col-md-2">
+        <input class="form-control" id="playerTeamName" ng-model="$ctrl.playerTeamName" placeholder="Player Team Name">
+    </div>
+    <div class="form-group col-md-2">
+        <select class="form-control" id="sel1" ng-model="$ctrl.playerPosition">
+            <option value="" selected disabled>Select Player Position</option>
+            <option value="QB">QB</option>
+            <option value="WR">WR</option>
+            <option value="RB">RB</option>
+            <option value="TE">TE</option>
+            <option value="K">K</option>
+            <option value="DEF">DEF</option>
+        </select>
+    </div>
+    <div class="form-group col-md-2">
+        <input class="form-control" id="byeWeek" ng-model="$ctrl.byeWeek" placeholder="Enter Player Name">
+    </div>
+    <div id="addPlayer" class="col-md-2">
+        <a type="button" class="btn btn-primary" ng-click="$ctrl.addPlayer()">Add Player</a>
+    </div>
+    <div class="col-md-1">
+    </div>
+</div>

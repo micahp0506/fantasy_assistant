@@ -10,7 +10,10 @@ angular.
     },
     controller: [
       function TeamController() {
-        console.log("this", this);
+
+        this.addPlayer = function () {
+          console.log("this", this);
+        }
       }
     ]
   });

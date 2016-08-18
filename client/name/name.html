@@ -6,9 +6,11 @@
       <input class="form-control" id="" ng-model="$ctrl.teamName" placeholder="Enter Team Name">
     </div>
     <div id="new-team" class="col-md-2">
-      <a type="button" class="btn btn-primary" ng-click="$ctrl.setName()" href="/#/team">Let's Do This!!</a>
+      <a type="button" class="btn btn-primary" ng-click="$ctrl.setName()">Let's Do This!!</a>
     </div>
     <div class="col-md-4"></div>
   </div>
-  <team></team>
+  <div ng-if="$ctrl.showTeam">
+    <team name="$ctrl.name"></team>
+  </div>
 </form>

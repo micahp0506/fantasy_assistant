@@ -7,13 +7,17 @@ angular.
     templateUrl: 'name/name.html',
     controller: [
       function NameController() {
-
+        this.showTeam = false;
         this.setName = function () {
+          console.log("this", this);
           this.name = {
             teamName: this.teamName
           }
-          console.log("this.teamName", this);
+
+          this.showTeam = true;
+          console.log("this", this);
         }
+        console.log("this", this);
       }
     ]
   });
