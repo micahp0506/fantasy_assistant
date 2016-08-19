@@ -21,6 +21,19 @@
       <div ng-view class="view-frame"></div>
     </div>
 
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAEGPNZWcqhfxT8O4v91wxm7TMq5iSuxZU",
+        authDomain: "fantasy-draft-asst.firebaseapp.com",
+        databaseURL: "https://fantasy-draft-asst.firebaseio.com",
+        storageBucket: "fantasy-draft-asst.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
