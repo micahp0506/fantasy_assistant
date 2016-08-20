@@ -6,19 +6,33 @@ angular.
   component('team', {
     templateUrl: 'team/team.html',
     bindings: {
-        name: '<'
+        teamArray: '<'
     },
     controller:
       function TeamController(draftService) {
-        // let config = {
-        //     apiKey: "AIzaSyAEGPNZWcqhfxT8O4v91wxm7TMq5iSuxZU",
-        //     authDomain: "fantasy-draft-asst.firebaseapp.com",
-        //     databaseURL: "https://fantasy-draft-asst.firebaseio.com",
-        //     storageBucket: "fantasy-draft-asst.appspot.com",
+        console.log("this", this);
+        // this.team = [];
+        // console.log("this", this);
+        // if (this.team.length === 0) {
+        //   this.team.push(this.name);
+        //   } else {
+        //   this.team.map((t) => {
+        //     if (t.teamName !== this.name.teamName) {
+        //       t.teamName === this.name.teamName;
+        //     }
+        //   });
         // };
-        // firebase.initializeApp(config);
+
         this.addPlayer = function () {
           console.log("this", this);
+          let player = {
+            name: this.playerName,
+            teamName: this.playerTeamName,
+            position: this.playerPosition,
+            byeWeek: this.byeWeek
+          }
+          this.teamArray.push(player);
+          console.log("team", this.teamArray);
         }
 
         this.logOut = function () {

@@ -23,7 +23,8 @@ angular.
             draftService.auth().createUserWithEmailAndPassword(this.username, this.password).catch(function(error) {
                 if (error) {
                     alert(error.messgae);
-                    console.log("errorMessage", errorMessage);
+                    console.log("errorMessage", error.message);
+                    window.location = "#/";
                 }
             });
         }
@@ -32,6 +33,7 @@ angular.
                 if (error) {
                     alert(error.messgae);
                     console.log("errorMessage", error.message);
+                    window.location = "#/";
                 }
             });
         }
