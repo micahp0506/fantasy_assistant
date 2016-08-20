@@ -9,7 +9,7 @@ angular.
         teamArray: '<'
     },
     controller:
-      function TeamController(draftService) {
+      function DraftController(draftService) {
 
         this.addPlayer = function () {
           console.log("this", this);
