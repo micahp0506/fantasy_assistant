@@ -1,6 +1,6 @@
 <form>
   <div class="row"></div>
-  <div class="row">
+  <div class="row" ng-if="$ctrl.showName">
     <div class="col-md-4"></div>
     <div class="form-group col-md-2">
       <input class="form-control" id="" ng-model="$ctrl.teamName" placeholder="Enter Team Name">
@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <div ng-if="$ctrl.showTeam">
-    <team team-array="$ctrl.team"></team>
+  <div ng-if="$ctrl.showDraft">
+    <draft team-array="$ctrl.team"></draft>
   </div>
 </form>

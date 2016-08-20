@@ -7,12 +7,10 @@ angular.
     templateUrl: 'name/name.html',
     controller:
       function NameController() {
-        this.showTeam = false;
+        this.showDraft = false;
+        this.showName = true;
+
         this.setName = function () {
-          console.log("this", this);
-          // this.name = {
-          //   teamName: this.teamName
-          // }
           this.team = [];
           console.log("this", this.teamName);
           if (this.team.length === 0) {
@@ -24,7 +22,8 @@ angular.
               }
             });
           };
-          this.showTeam = true;
+          this.showDraft = true;
+          this.showName = false;
         }
         console.log("this", this.team);
       }

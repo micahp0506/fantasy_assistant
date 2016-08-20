@@ -2,30 +2,19 @@
 
 
 angular.
-  module('team').
-  component('team', {
-    templateUrl: 'team/team.html',
+  module('draft').
+  component('draft', {
+    templateUrl: 'draft/draft.html',
     bindings: {
         teamArray: '<'
     },
     controller:
       function TeamController(draftService) {
-        console.log("this", this);
-        // this.team = [];
-        // console.log("this", this);
-        // if (this.team.length === 0) {
-        //   this.team.push(this.name);
-        //   } else {
-        //   this.team.map((t) => {
-        //     if (t.teamName !== this.name.teamName) {
-        //       t.teamName === this.name.teamName;
-        //     }
-        //   });
-        // };
 
         this.addPlayer = function () {
           console.log("this", this);
           let player = {
+            playerId: new Date() * -1,
             name: this.playerName,
             teamName: this.playerTeamName,
             position: this.playerPosition,
@@ -33,6 +22,10 @@ angular.
           }
           this.teamArray.push(player);
           console.log("team", this.teamArray);
+          this.playerName = null;
+          this.playerTeamName = null;
+          this.playerPosition = '';
+          this.byeWeek = null;
         }
 
         this.logOut = function () {

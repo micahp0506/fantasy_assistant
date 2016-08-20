@@ -6,7 +6,7 @@ angular.module('fantasyAssistantApp', [
     'header',
     'auth',
     'name',
-    'team'
+    'draft'
 ])
 .service('draftService', ['$rootScope', function($rootScope) {
     let config = {

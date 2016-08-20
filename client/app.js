@@ -16,8 +16,8 @@ config(['$locationProvider', '$routeProvider',
             .when('/name', {
                 template: '<name></name>'
             })
-            .when('/team', {
-                template: '<team></team>'
+            .when('/draft', {
+                template: '<draft></draft>'
             })
             .otherwise('/');
     }
