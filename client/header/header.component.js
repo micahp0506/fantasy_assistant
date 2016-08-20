@@ -5,9 +5,8 @@ angular.
   module('header').
   component('header', {
     templateUrl: 'header/header.html',
-    controller: [
+    controller:
       function HeaderController() {
         console.log("this", this);
       }
-    ]
   });

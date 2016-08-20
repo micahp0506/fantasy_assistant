@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `team` module
-angular.module('team', ["firebase"]);
+angular.module('team', []);

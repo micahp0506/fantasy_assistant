@@ -5,7 +5,7 @@ angular.
   module('name').
   component('name', {
     templateUrl: 'name/name.html',
-    controller: [
+    controller:
       function NameController() {
         this.showTeam = false;
         this.setName = function () {
@@ -19,5 +19,4 @@ angular.
         }
         console.log("this", this);
       }
-    ]
   });

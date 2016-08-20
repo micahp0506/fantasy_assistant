@@ -2,14 +2,15 @@
 
 
 angular.
-  module('auth',[]).
+  module('auth').
   component('auth', {
     templateUrl: 'auth/auth.html',
-    controller: [
-      function AuthController($firebaseAuth, firebaseInstance) {
+    controller:
+      function AuthController(draftService) {
         console.log("this", this);
-        let rootRef = firebase.database().ref();
-        firebase.auth().onAuthStateChanged(function(user) {
+        console.log("draftService", draftService);
+        // let rootRef = firebase.database().ref();
+        draftService.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log("user", user);
             } else {
@@ -19,7 +20,7 @@ angular.
         this.newUser = function() {
             console.log("in");
 
-            firebase.auth().createUserWithEmailAndPassword(this.username, this.password).catch(function(error) {
+            draftService.auth().createUserWithEmailAndPassword(this.username, this.password).catch(function(error) {
                 if (error) {
                     alert(error.messgae);
                     console.log("errorMessage", errorMessage);
@@ -27,7 +28,7 @@ angular.
             });
         }
         this.loginUser = function() {
-            firebase.auth().signInWithEmailAndPassword(this.username, this.password).catch(function(error) {
+            draftService.auth().signInWithEmailAndPassword(this.username, this.password).catch(function(error) {
                 if (error) {
                     alert(error.messgae);
                     console.log("errorMessage", error.message);
@@ -35,5 +36,4 @@ angular.
             });
         }
       }
-    ]
   });

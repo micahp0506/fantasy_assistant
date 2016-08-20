@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `name` module
-angular.module('name', ["firebase"]);
+angular.module('name', []);
