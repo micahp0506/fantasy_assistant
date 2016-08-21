@@ -6,7 +6,10 @@ angular.
   component('team', {
     templateUrl: 'team/team.html',
     bindings: {
-        teamArray: '<'
+        teamArray: '='
     },
     controller:
       function TeamController(draftService) {
+        console.log("this", this);
+      }
+});

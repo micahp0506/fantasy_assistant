@@ -6,22 +6,57 @@ angular.
   component('draft', {
     templateUrl: 'draft/draft.html',
     bindings: {
-        teamArray: '<'
+        team: '<'
     },
     controller:
       function DraftController(draftService) {
 
+        this.teamArray =[];
+        this.qbArray = [];
+        this.wrArray = [];
+        this.rbArray = [];
+        this.teArray = [];
+        this.kArray = [];
+        this.defArray = [];
+
         this.addPlayer = function () {
           console.log("this", this);
+
           let player = {
             playerId: new Date() * -1,
-            name: this.playerName,
-            teamName: this.playerTeamName,
-            position: this.playerPosition,
+            playerName: this.playerName,
+            playerteamName: this.playerTeamName,
+            playerPosition: this.playerPosition,
             byeWeek: this.byeWeek
           }
+
+          if (this.teamArray.length === 0) {
+            this.teamArray.push({teamName: this.team});
+          } else {
+            this.teamArray.map((t) => {
+              if (t.teamName !== this.team) {
+                t.teamName === this.team;
+              }
+            });
+          };
+
           this.teamArray.push(player);
-          console.log("team", this.teamArray);
+          this.teamArray.map((t) => {
+            if (t.playerPosition === "QB") {
+              this.qbArray.push(t);
+            } else if (t.playerPosition === "WR") {
+              this.wrArray.push(t);
+            } else if (t.playerPosition === "RB") {
+              this.rbArray.push(t);
+            } else if (t.playerPosition === "TE") {
+              this.teArray.push(t);
+            } else if (t.playerPosition === "K") {
+              this.kArray.push(t);
+            } else if (t.playerPosition === "DEF") {
+              this.defArray.push(t);
+            }
+          });
+          console.log("this", this);
           this.playerName = null;
           this.playerTeamName = null;
           this.playerPosition = '';
