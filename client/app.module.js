@@ -19,6 +19,8 @@ angular.module('fantasyAssistantApp', [
 
     let firebaseInstance = firebase.initializeApp(config);
     return firebaseInstance;
+
+    let database = firebase.database();
 }]);
 
 

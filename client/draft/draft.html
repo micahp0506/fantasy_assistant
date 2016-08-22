@@ -50,7 +50,7 @@
         <div class="col-md-5">
         </div>
     </div>
-    <div class="row" ng-repeat="QB in $ctrl.qbArray track by $index">
+    <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <table class="table table-striped">
@@ -63,6 +63,15 @@
                         <th>Bye Week</th>
                     </tr>
                 </thead>
+                <tbody ng-repeat="p in $ctrl.teamArray track by $index">
+                    <tr>
+                        <th scope="row">{{p.round}}</th>
+                        <td>{{p.playerName}}</td>
+                        <td>{{p.playerteamName}}</td>
+                        <td>{{p.playerPosition}}</td>
+                        <td>{{p.byeWeek}}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div class="col-md-1"></div>

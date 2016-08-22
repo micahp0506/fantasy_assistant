@@ -6,13 +6,16 @@ angular.
   component('name', {
     templateUrl: 'name/name.html',
     controller:
-      function NameController() {
+      function NameController(draftService) {
         this.showDraft = false;
         this.showName = true;
 
         this.setName = function () {
-          // this.team = [];
           console.log("this", this.teamName);
+          let name = {teamName: this.teamName};
+          draftService.database().ref('team/name').set({
+            teamName: this.teamName
+          });
           // if (this.team.length === 0) {
           //   this.team.push({teamName: this.teamName});
           // } else {
