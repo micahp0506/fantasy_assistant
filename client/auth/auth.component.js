@@ -6,13 +6,13 @@ angular.
   component('auth', {
     templateUrl: 'auth/auth.html',
     controller:
-      function AuthController(draftService) {
+      function AuthController(draftService, authService) {
         console.log("this", this);
         console.log("draftService", draftService);
-        // let rootRef = firebase.database().ref();
+
         draftService.auth().onAuthStateChanged(function(user) {
             if (user) {
-                console.log("user", user);
+                authService.setUser(user);
             } else {
                 console.log("poop");
             }
@@ -25,6 +25,11 @@ angular.
                     alert(error.messgae);
                     console.log("errorMessage", error.message);
                     window.location = "#/";
+                } else {
+                    draftService.database().ref('users/' + user.userId).set({
+                        userName: this.username,
+                        passWord: this.password
+                    });
                 }
             });
         }
@@ -38,4 +43,19 @@ angular.
             });
         }
       }
-  });
+  }).
+  service('authService', ['$rootScope', function($rootScope) {
+        let user;
+
+        return {
+            setUser: function(user) {
+                console.log("user", user);
+                user = user;
+            },
+
+            getUser: function() {
+                return user;
+            }
+        }
+
+    }]);
