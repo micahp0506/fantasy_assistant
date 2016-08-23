@@ -45,16 +45,16 @@ angular.
       }
   }).
   service('authService', ['$rootScope', function($rootScope) {
-        let user;
+        let userObj;
 
         return {
             setUser: function(user) {
                 console.log("user", user);
-                user = user;
+                userObj = user;
             },
 
             getUser: function() {
-                return user;
+                return userObj;
             }
         }
 

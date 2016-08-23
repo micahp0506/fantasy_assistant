@@ -9,7 +9,8 @@ angular.
         team: '<'
     },
     controller:
-      function DraftController(draftService) {
+      function DraftController(draftService, authService) {
+        let user = authService.getUser();
         this.round = 0;
         this.teamArray =[];
         this.qbArray = [];
@@ -22,32 +23,25 @@ angular.
         this.addPlayer = function () {
           console.log("this", this);
           this.round += 1;
-          let player = {
-            playerId: new Date() * -1,
-            round: this.round,
-            playerName: this.playerName,
-            playerteamName: this.playerTeamName,
-            playerPosition: this.playerPosition,
-            byeWeek: this.byeWeek
-          }
+          this.pId = new Date() * -1;
 
-          draftService.database().ref('team/players').push({
-            playerId: new Date() * -1,
+          draftService.database().ref(user.uid + '/players').push({
+            playerId: this.pId,
             round: this.round,
             playerName: this.playerName,
-            playerteamName: this.playerTeamName,
+            playerTeamName: this.playerTeamName,
             playerPosition: this.playerPosition,
             byeWeek: this.byeWeek
           });
-          // if (this.teamArray.length === 0) {
-          //   this.teamArray.push({teamName: this.team});
-          // } else {
-          //   this.teamArray.map((t) => {
-          //     if (t.teamName !== this.team) {
-          //       t.teamName === this.team;
-          //     }
-          //   });
-          // };
+
+          let player = {
+            playerId: this.pId,
+            round: this.round,
+            playerName: this.playerName,
+            playerTeamName: this.playerTeamName,
+            playerPosition: this.playerPosition,
+            byeWeek: this.byeWeek
+          }
 
           this.teamArray.push(player);
           this.round = this.teamArray.length;

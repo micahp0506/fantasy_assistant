@@ -12,6 +12,8 @@ angular.
       function NameController(draftService, authService) {
         console.log("this", this);
         console.log("authService", authService);
+        let user = authService.getUser();
+        console.log("user", user);
         this.showDraft = false;
         this.showName = true;
 
@@ -19,7 +21,7 @@ angular.
           console.log("this", this.teamName);
 
           let name = {teamName: this.teamName};
-          draftService.database().ref('team/name').set({
+          draftService.database().ref(user.uid + '/name').set({
             teamName: this.teamName
           });
           // if (this.team.length === 0) {
